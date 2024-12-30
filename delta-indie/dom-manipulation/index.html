@@ -8,6 +8,49 @@
     <title>DOM Manipulation</title>
   </head>
   <body>
-    <div id="title">TITLE</div>
+    <h1>Saldo: <span id="balance"></span></h1>
+    <div style="display: flex">
+      <div
+        id="numbers"
+        style="
+          display: flex;
+          width: 500px;
+          flex-wrap: wrap;
+          margin-bottom: 35px;
+        "></div>
+
+      <div id="types">
+        <button
+          id="income"
+          style="margin: 20px; padding: 20px">
+          INCOME
+        </button>
+        <button
+          id="expense"
+          style="margin: 20px; padding: 20px">
+          EXPENSE
+        </button>
+      </div>
+    </div>
+
+    <div style="margin: 20px">
+      <span id="type"></span>
+      <span id="placeholder"> </span>
+    </div>
+    <button
+      id="submit"
+      style="margin: 20px; padding: 20px">
+      Submit
+    </button>
+    <button
+      id="clear"
+      style="margin: 20px; padding: 20px">
+      Clear
+    </button>
+
+    <ul id="transaction-list"></ul>
+    <script
+      src="cashFlow.js"
+      defer></script>
   </body>
 </html>
