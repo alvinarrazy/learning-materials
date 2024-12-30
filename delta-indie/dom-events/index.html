@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events Example</title>
+  </head>
+  <body>
+    <!-- Mouse Events -->
+    <button id="clickButton">Click Me</button>
+    <div
+      id="colorDiv"
+      style="
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border: 1px solid black;
+      "></div>
+
+    <!-- Keyboard Events -->
+    <p>Press arrow keys to see console logs.</p>
+
+    <!-- Form Events -->
+    <form id="emailForm">
+      <input
+        type="email"
+        id="emailInput"
+        placeholder="Enter your email" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <input
+      type="text"
+      id="textInput"
+      placeholder="Type something" />
+
+    <!-- Event Propagation -->
+    <div
+      id="parentDiv"
+      style="width: 200px; height: 200px; background-color: lightblue">
+      Parent Div
+      <div
+        id="childDiv"
+        style="width: 100px; height: 100px; background-color: lightcoral">
+        Child Div
+      </div>
+    </div>
+
+    <!-- Debouncing -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search here..." />
+    <button id="debounceButton">Debounce Button</button>
+  </body>
+  <script
+    defer
+    src="./index.js"></script>
+</html>
