@@ -82,3 +82,5 @@ app.use('/api/login', login);
 app.use('/api/*', authenticate, processRequest);
 
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+
+module.exports = app;
