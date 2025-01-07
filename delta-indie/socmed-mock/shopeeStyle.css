@@ -1,0 +1,1635 @@
+.shopee_ic {
+  box-sizing: border-box;
+  padding: 0.3125rem;
+  width: 16.66667%;
+}
+.shopee_ic *,
+.shopee_ic ::before,
+.shopee_ic ::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+.shopee_ic ::before,
+.shopee_ic ::after {
+  --tw-content: '';
+}
+
+.shopee_ic html {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+}
+
+.shopee_ic body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+.shopee_ic hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+.shopee_ic abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+.shopee_ic h1,
+.shopee_ic h2,
+.shopee_ic h3,
+.shopee_ic h4,
+.shopee_ic h5,
+.shopee_ic h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.shopee_ic a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+.shopee_ic b,
+.shopee_ic strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+.shopee_ic code,
+.shopee_ic kbd,
+.shopee_ic samp,
+.shopee_ic pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+.shopee_ic small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+.shopee_ic sub,
+.shopee_ic sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.shopee_ic sub {
+  bottom: -0.25em;
+}
+
+.shopee_ic sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+.shopee_ic table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+.shopee_ic button,
+.shopee_ic input,
+.shopee_ic optgroup,
+.shopee_ic select,
+.shopee_ic textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+.shopee_ic button,
+.shopee_ic select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+.shopee_ic button,
+.shopee_ic [type='button'],
+.shopee_ic [type='reset'],
+.shopee_ic [type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+.shopee_ic :-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+.shopee_ic :-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+.shopee_ic progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+.shopee_ic ::-webkit-inner-spin-button,
+.shopee_ic ::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+.shopee_ic [type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+.shopee_ic ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+.shopee_ic ::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+.shopee_ic summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+.shopee_ic blockquote,
+.shopee_ic dl,
+.shopee_ic dd,
+.shopee_ic h1,
+.shopee_ic h2,
+.shopee_ic h3,
+.shopee_ic h4,
+.shopee_ic h5,
+.shopee_ic h6,
+.shopee_ic hr,
+.shopee_ic figure,
+.shopee_ic p,
+.shopee_ic pre {
+  margin: 0;
+}
+
+.shopee_ic fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+.shopee_ic legend {
+  padding: 0;
+}
+
+.shopee_ic ol,
+.shopee_ic ul,
+.shopee_ic menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+.shopee_ic textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+.shopee_ic input::-moz-placeholder,
+.shopee_ic textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+.shopee_ic input::placeholder,
+.shopee_ic textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+.shopee_ic button,
+.shopee_ic [role='button'] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+.shopee_ic :disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+.shopee_ic img,
+.shopee_ic svg,
+.shopee_ic video,
+.shopee_ic canvas,
+.shopee_ic audio,
+.shopee_ic iframe,
+.shopee_ic embed,
+.shopee_ic object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+.shopee_ic img,
+.shopee_ic video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+.shopee_ic [hidden] {
+  display: none;
+}
+
+.shopee_ic *,
+.shopee_ic ::before,
+.shopee_ic ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+}
+
+.shopee_ic ::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+}
+.shopee_ic .\!container {
+  width: 100% !important;
+}
+.shopee_ic .container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .shopee_ic .\!container {
+    max-width: 640px !important;
+  }
+
+  .shopee_ic .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .shopee_ic .\!container {
+    max-width: 768px !important;
+  }
+
+  .shopee_ic .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .shopee_ic .\!container {
+    max-width: 1024px !important;
+  }
+
+  .shopee_ic .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .shopee_ic .\!container {
+    max-width: 1280px !important;
+  }
+
+  .shopee_ic .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .shopee_ic .\!container {
+    max-width: 1536px !important;
+  }
+
+  .shopee_ic .container {
+    max-width: 1536px;
+  }
+}
+.shopee_ic .pointer-events-none {
+  pointer-events: none;
+}
+.shopee_ic .visible {
+  visibility: visible;
+}
+.shopee_ic .fixed {
+  position: fixed;
+}
+.shopee_ic .absolute {
+  position: absolute;
+}
+.shopee_ic .relative {
+  position: relative;
+}
+.shopee_ic .inset-1\/2 {
+  inset: 50%;
+}
+.shopee_ic .inset-y-0 {
+  top: 0px;
+  bottom: 0px;
+}
+.shopee_ic .-left-px {
+  left: -1px;
+}
+.shopee_ic .-top-\[11px\] {
+  top: -11px;
+}
+.shopee_ic .bottom-0 {
+  bottom: 0px;
+}
+.shopee_ic .left-0 {
+  left: 0px;
+}
+.shopee_ic .left-1 {
+  left: 0.25rem;
+}
+.shopee_ic .left-\[6px\] {
+  left: 6px;
+}
+.shopee_ic .right-0 {
+  right: 0px;
+}
+.shopee_ic .right-1 {
+  right: 0.25rem;
+}
+.shopee_ic .right-2 {
+  right: 0.5rem;
+}
+.shopee_ic .top-0 {
+  top: 0px;
+}
+.shopee_ic .top-2 {
+  top: 0.5rem;
+}
+.shopee_ic .top-\[calc\(100\%-6px\)\] {
+  top: calc(100% - 6px);
+}
+.shopee_ic .z-0 {
+  z-index: 0;
+}
+.shopee_ic .z-10 {
+  z-index: 10;
+}
+.shopee_ic .z-20 {
+  z-index: 20;
+}
+.shopee_ic .z-30 {
+  z-index: 30;
+}
+.shopee_ic .z-\[-1\] {
+  z-index: -1;
+}
+.shopee_ic .z-\[1\] {
+  z-index: 1;
+}
+.shopee_ic .mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.shopee_ic .mx-0\.5 {
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+}
+.shopee_ic .-ml-0 {
+  margin-left: -0px;
+}
+.shopee_ic .-ml-0\.5 {
+  margin-left: -0.125rem;
+}
+.shopee_ic .-ml-px {
+  margin-left: -1px;
+}
+.shopee_ic .-mr-px {
+  margin-right: -1px;
+}
+.shopee_ic .mb-0 {
+  margin-bottom: 0px;
+}
+.shopee_ic .mb-0\.5 {
+  margin-bottom: 0.125rem;
+}
+.shopee_ic .mb-1 {
+  margin-bottom: 0.25rem;
+}
+.shopee_ic .mb-2 {
+  margin-bottom: 0.5rem;
+}
+.shopee_ic .mb-\[15px\] {
+  margin-bottom: 15px;
+}
+.shopee_ic .ml-0 {
+  margin-left: 0px;
+}
+.shopee_ic .ml-0\.5 {
+  margin-left: 0.125rem;
+}
+.shopee_ic .ml-1 {
+  margin-left: 0.25rem;
+}
+.shopee_ic .ml-\[-1px\] {
+  margin-left: -1px;
+}
+.shopee_ic .ml-\[-3px\] {
+  margin-left: -3px;
+}
+.shopee_ic .ml-\[3px\] {
+  margin-left: 3px;
+}
+.shopee_ic .ml-auto {
+  margin-left: auto;
+}
+.shopee_ic .mr-0 {
+  margin-right: 0px;
+}
+.shopee_ic .mr-0\.5 {
+  margin-right: 0.125rem;
+}
+.shopee_ic .mr-1 {
+  margin-right: 0.25rem;
+}
+.shopee_ic .mr-px {
+  margin-right: 1px;
+}
+.shopee_ic .mt-2 {
+  margin-top: 0.5rem;
+}
+.shopee_ic .mt-3 {
+  margin-top: 0.75rem;
+}
+.shopee_ic .mt-4 {
+  margin-top: 1rem;
+}
+.shopee_ic .mt-\[10px\] {
+  margin-top: 10px;
+}
+.shopee_ic .mt-\[3px\] {
+  margin-top: 3px;
+}
+.shopee_ic .mt-auto {
+  margin-top: auto;
+}
+.shopee_ic .box-border {
+  box-sizing: border-box;
+}
+.shopee_ic .box-content {
+  box-sizing: content-box;
+}
+.shopee_ic .line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.shopee_ic .block {
+  display: block;
+}
+.shopee_ic .inline-block {
+  display: inline-block;
+}
+.shopee_ic .inline {
+  display: inline;
+}
+.shopee_ic .flex {
+  display: flex;
+}
+.shopee_ic .inline-flex {
+  display: inline-flex;
+}
+.shopee_ic .grid {
+  display: grid;
+}
+.shopee_ic .contents {
+  display: contents;
+}
+.shopee_ic .hidden {
+  display: none;
+}
+.shopee_ic .h-3 {
+  height: 0.75rem;
+}
+.shopee_ic .h-4 {
+  height: 1rem;
+}
+.shopee_ic .h-5 {
+  height: 1.25rem;
+}
+.shopee_ic .h-6 {
+  height: 1.5rem;
+}
+.shopee_ic .h-8 {
+  height: 2rem;
+}
+.shopee_ic .h-\[1\.75rem\] {
+  height: 1.75rem;
+}
+.shopee_ic .h-\[1\.875rem\] {
+  height: 1.875rem;
+}
+.shopee_ic .h-\[14px\] {
+  height: 14px;
+}
+.shopee_ic .h-\[2\.5rem\] {
+  height: 2.5rem;
+}
+.shopee_ic .h-\[3\.75rem\] {
+  height: 3.75rem;
+}
+.shopee_ic .h-\[54px\] {
+  height: 54px;
+}
+.shopee_ic .h-full {
+  height: 100%;
+}
+.shopee_ic .h-px {
+  height: 1px;
+}
+.shopee_ic .h-sp10 {
+  height: 0.625rem;
+}
+.shopee_ic .h-sp14 {
+  height: 0.875rem;
+}
+.shopee_ic .max-h-5 {
+  max-height: 1.25rem;
+}
+.shopee_ic .min-h-\[1\.75rem\] {
+  min-height: 1.75rem;
+}
+.shopee_ic .min-h-\[2\.25rem\] {
+  min-height: 2.25rem;
+}
+.shopee_ic .min-h-\[2\.5rem\] {
+  min-height: 2.5rem;
+}
+.shopee_ic .min-h-\[3\.25rem\] {
+  min-height: 3.25rem;
+}
+.shopee_ic .min-h-\[3\.5rem\] {
+  min-height: 3.5rem;
+}
+.shopee_ic .min-h-\[38px\] {
+  min-height: 38px;
+}
+.shopee_ic .min-h-\[4\.5rem\] {
+  min-height: 4.5rem;
+}
+.shopee_ic .min-h-\[44px\] {
+  min-height: 44px;
+}
+.shopee_ic .min-h-\[4rem\] {
+  min-height: 4rem;
+}
+.shopee_ic .min-h-\[52px\] {
+  min-height: 52px;
+}
+.shopee_ic .min-h-\[64px\] {
+  min-height: 64px;
+}
+.shopee_ic .w-1 {
+  width: 0.25rem;
+}
+.shopee_ic .w-20 {
+  width: 5rem;
+}
+.shopee_ic .w-24 {
+  width: 6rem;
+}
+.shopee_ic .w-28 {
+  width: 7rem;
+}
+.shopee_ic .w-32 {
+  width: 8rem;
+}
+.shopee_ic .w-44 {
+  width: 11rem;
+}
+.shopee_ic .w-5 {
+  width: 1.25rem;
+}
+.shopee_ic .w-6 {
+  width: 1.5rem;
+}
+.shopee_ic .w-96 {
+  width: 24rem;
+}
+.shopee_ic .w-\[14px\] {
+  width: 14px;
+}
+.shopee_ic .w-\[3\.875rem\] {
+  width: 3.875rem;
+}
+.shopee_ic .w-\[4\.25rem\] {
+  width: 4.25rem;
+}
+.shopee_ic .w-\[54px\] {
+  width: 54px;
+}
+.shopee_ic .w-auto {
+  width: auto;
+}
+.shopee_ic .w-full {
+  width: 100%;
+}
+.shopee_ic .min-w-0 {
+  min-width: 0px;
+}
+.shopee_ic .max-w-\[40\%\] {
+  max-width: 40%;
+}
+.shopee_ic .max-w-\[60\%\] {
+  max-width: 60%;
+}
+.shopee_ic .max-w-\[calc\(100\%_-_17\.25rem\)\] {
+  max-width: calc(100% - 17.25rem);
+}
+.shopee_ic .max-w-\[calc\(100\%_-_7\.5rem\)\] {
+  max-width: calc(100% - 7.5rem);
+}
+.shopee_ic .max-w-\[calc\(100\%_-_9rem\)\] {
+  max-width: calc(100% - 9rem);
+}
+.shopee_ic .max-w-full {
+  max-width: 100%;
+}
+.shopee_ic .max-w-none {
+  max-width: none;
+}
+.shopee_ic .flex-1 {
+  flex: 1 1 0%;
+}
+.shopee_ic .flex-none {
+  flex: none;
+}
+.shopee_ic .flex-shrink {
+  flex-shrink: 1;
+}
+.shopee_ic .flex-shrink-0 {
+  flex-shrink: 0;
+}
+.shopee_ic .shrink-0 {
+  flex-shrink: 0;
+}
+.shopee_ic .flex-grow {
+  flex-grow: 1;
+}
+.shopee_ic .flex-grow-0 {
+  flex-grow: 0;
+}
+.shopee_ic .origin-bottom-right {
+  transform-origin: bottom right;
+}
+.shopee_ic .origin-top-left {
+  transform-origin: top left;
+}
+.shopee_ic .-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .rotate-180 {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .scale-x-50 {
+  --tw-scale-x: 0.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .scale-y-50 {
+  --tw-scale-y: 0.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .cursor-not-allowed {
+  cursor: not-allowed;
+}
+.shopee_ic .cursor-pointer {
+  cursor: pointer;
+}
+.shopee_ic .grid-cols-\[repeat\(auto-fit\2c 176px\)\] {
+  grid-template-columns: repeat(auto-fit, 176px);
+}
+.shopee_ic .flex-row {
+  flex-direction: row;
+}
+.shopee_ic .flex-col {
+  flex-direction: column;
+}
+.shopee_ic .place-content-center {
+  place-content: center;
+}
+.shopee_ic .items-end {
+  align-items: flex-end;
+}
+.shopee_ic .items-center {
+  align-items: center;
+}
+.shopee_ic .items-baseline {
+  align-items: baseline;
+}
+.shopee_ic .items-stretch {
+  align-items: stretch;
+}
+.shopee_ic .justify-start {
+  justify-content: flex-start;
+}
+.shopee_ic .justify-end {
+  justify-content: flex-end;
+}
+.shopee_ic .justify-center {
+  justify-content: center;
+}
+.shopee_ic .justify-between {
+  justify-content: space-between;
+}
+.shopee_ic .gap-4 {
+  gap: 1rem;
+}
+.shopee_ic .space-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+}
+.shopee_ic .space-x-0\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.125rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.125rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.shopee_ic .space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.shopee_ic .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.shopee_ic .space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.shopee_ic .space-y-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse));
+}
+.shopee_ic .space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.125rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.125rem * var(--tw-space-y-reverse));
+}
+.shopee_ic .space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+.shopee_ic .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.shopee_ic .space-y-\[10px\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(10px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(10px * var(--tw-space-y-reverse));
+}
+.shopee_ic .space-y-\[5px\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(5px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(5px * var(--tw-space-y-reverse));
+}
+.shopee_ic .space-y-\[6px\] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(6px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(6px * var(--tw-space-y-reverse));
+}
+.shopee_ic .self-center {
+  align-self: center;
+}
+.shopee_ic .overflow-hidden {
+  overflow: hidden;
+}
+.shopee_ic .overflow-clip {
+  overflow: clip;
+}
+.shopee_ic .truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.shopee_ic .text-ellipsis {
+  text-overflow: ellipsis;
+}
+.shopee_ic .whitespace-nowrap {
+  white-space: nowrap;
+}
+.shopee_ic .break-words {
+  overflow-wrap: break-word;
+}
+.shopee_ic .rounded {
+  border-radius: 0.25rem;
+}
+.shopee_ic .rounded-\[1px\] {
+  border-radius: 1px;
+}
+.shopee_ic .rounded-\[2px\] {
+  border-radius: 2px;
+}
+.shopee_ic .rounded-\[50\%\] {
+  border-radius: 50%;
+}
+.shopee_ic .rounded-full {
+  border-radius: 9999px;
+}
+.shopee_ic .rounded-md {
+  border-radius: 0.375rem;
+}
+.shopee_ic .rounded-sm {
+  border-radius: 0.125rem;
+}
+.shopee_ic .rounded-xl {
+  border-radius: 0.75rem;
+}
+.shopee_ic .rounded-e-sm {
+  border-start-end-radius: 0.125rem;
+  border-end-end-radius: 0.125rem;
+}
+.shopee_ic .rounded-r-\[100px\] {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+.shopee_ic .rounded-bl-sm {
+  border-bottom-left-radius: 0.125rem;
+}
+.shopee_ic .rounded-br-sm {
+  border-bottom-right-radius: 0.125rem;
+}
+.shopee_ic .rounded-tl-sm {
+  border-top-left-radius: 0.125rem;
+}
+.shopee_ic .rounded-tr-sm {
+  border-top-right-radius: 0.125rem;
+}
+.shopee_ic .border {
+  border-width: 1px;
+}
+.shopee_ic .border-0 {
+  border-width: 0px;
+}
+.shopee_ic .border-\[0\.5px\] {
+  border-width: 0.5px;
+}
+.shopee_ic .border-l {
+  border-left-width: 1px;
+}
+.shopee_ic .border-solid {
+  border-style: solid;
+}
+.shopee_ic .border-\[\#30B566\] {
+  --tw-border-opacity: 1;
+  border-color: rgba(48, 181, 102, var(--tw-border-opacity));
+}
+.shopee_ic .border-shopee-black26 {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.shopee_ic .border-shopee-black9 {
+  border-color: rgba(0, 0, 0, 0.09);
+}
+.shopee_ic .border-shopee-primary {
+  --tw-border-opacity: 1;
+  border-color: rgba(238, 77, 45, var(--tw-border-opacity));
+}
+.shopee_ic .bg-\[\#eb1717\] {
+  --tw-bg-opacity: 1;
+  background-color: rgba(235, 23, 23, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-\[\#ee4d2d5c\] {
+  background-color: #ee4d2d5c;
+}
+.shopee_ic .bg-\[\#ee4d2d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgba(238, 77, 45, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-black\/\[0\.65\] {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.shopee_ic .bg-shopee-black26 {
+  background-color: rgba(0, 0, 0, 0.26);
+}
+.shopee_ic .bg-shopee-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgba(6, 107, 200, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-deep-pink {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 237, 235, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-deep-red {
+  --tw-bg-opacity: 1;
+  background-color: rgba(208, 1, 27, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-green {
+  --tw-bg-opacity: 1;
+  background-color: rgba(38, 170, 153, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-grey {
+  --tw-bg-opacity: 1;
+  background-color: rgba(250, 250, 250, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-official-shop {
+  --tw-bg-opacity: 1;
+  background-color: rgba(208, 1, 27, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-pink {
+  --tw-bg-opacity: 1;
+  background-color: rgba(254, 238, 234, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(238, 77, 45, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-shopee-voucher-yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgba(246, 145, 19, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.shopee_ic .bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+.shopee_ic .from-white\/0 {
+  --tw-gradient-from: rgba(255, 255, 255, 0) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(255, 255, 255, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.shopee_ic .to-black\/60 {
+  --tw-gradient-to: rgba(0, 0, 0, 0.6) var(--tw-gradient-to-position);
+}
+.shopee_ic .bg-contain {
+  background-size: contain;
+}
+.shopee_ic .bg-cover {
+  background-size: cover;
+}
+.shopee_ic .bg-center {
+  background-position: center;
+}
+.shopee_ic .bg-no-repeat {
+  background-repeat: no-repeat;
+}
+.shopee_ic .stroke-none {
+  stroke: none;
+}
+.shopee_ic .object-contain {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.shopee_ic .p-0 {
+  padding: 0px;
+}
+.shopee_ic .p-0\.5 {
+  padding: 0.125rem;
+}
+.shopee_ic .p-1 {
+  padding: 0.25rem;
+}
+.shopee_ic .p-2 {
+  padding: 0.5rem;
+}
+.shopee_ic .p-5 {
+  padding: 1.25rem;
+}
+.shopee_ic .p-\[1px\] {
+  padding: 1px;
+}
+.shopee_ic .p-px {
+  padding: 1px;
+}
+.shopee_ic .p-sp10 {
+  padding: 0.625rem;
+}
+.shopee_ic .px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.shopee_ic .px-0\.5 {
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+}
+.shopee_ic .px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.shopee_ic .px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.shopee_ic .px-\[2px\] {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.shopee_ic .px-\[4px\] {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.shopee_ic .px-\[5px\] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.shopee_ic .px-\[6px\] {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.shopee_ic .px-px {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+.shopee_ic .py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.shopee_ic .py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.shopee_ic .py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.shopee_ic .py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+.shopee_ic .py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.shopee_ic .py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.shopee_ic .py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.shopee_ic .py-\[1px\] {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.shopee_ic .pb-1 {
+  padding-bottom: 0.25rem;
+}
+.shopee_ic .pb-\[1px\] {
+  padding-bottom: 1px;
+}
+.shopee_ic .pb-\[6px\] {
+  padding-bottom: 6px;
+}
+.shopee_ic .pl-0 {
+  padding-left: 0px;
+}
+.shopee_ic .pl-0\.5 {
+  padding-left: 0.125rem;
+}
+.shopee_ic .pl-2 {
+  padding-left: 0.5rem;
+}
+.shopee_ic .pl-px {
+  padding-left: 1px;
+}
+.shopee_ic .pr-0 {
+  padding-right: 0px;
+}
+.shopee_ic .pr-0\.5 {
+  padding-right: 0.125rem;
+}
+.shopee_ic .pr-1 {
+  padding-right: 0.25rem;
+}
+.shopee_ic .pr-\[1px\] {
+  padding-right: 1px;
+}
+.shopee_ic .pr-\[4px\] {
+  padding-right: 4px;
+}
+.shopee_ic .pr-\[6px\] {
+  padding-right: 6px;
+}
+.shopee_ic .pt-1 {
+  padding-top: 0.25rem;
+}
+.shopee_ic .pt-2 {
+  padding-top: 0.5rem;
+}
+.shopee_ic .pt-\[1px\] {
+  padding-top: 1px;
+}
+.shopee_ic .pt-\[40\%\] {
+  padding-top: 40%;
+}
+.shopee_ic .pt-\[6px\] {
+  padding-top: 6px;
+}
+.shopee_ic .pt-full {
+  padding-top: 100%;
+}
+.shopee_ic .text-center {
+  text-align: center;
+}
+.shopee_ic .align-middle {
+  vertical-align: middle;
+}
+.shopee_ic .text-2xl\/9 {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+.shopee_ic .text-\[0\.5rem\]\/\[0\.5rem\] {
+  font-size: 0.5rem;
+  line-height: 0.5rem;
+}
+.shopee_ic .text-\[0\.625rem\] {
+  font-size: 0.625rem;
+}
+.shopee_ic .text-\[10px\] {
+  font-size: 10px;
+}
+.shopee_ic .text-\[10px\]\/3 {
+  font-size: 10px;
+  line-height: 0.75rem;
+}
+.shopee_ic .text-\[8px\]\/\[8px\] {
+  font-size: 8px;
+  line-height: 8px;
+}
+.shopee_ic .text-\[9px\]\/3 {
+  font-size: 9px;
+  line-height: 0.75rem;
+}
+.shopee_ic .text-\[9px\]\/sp10 {
+  font-size: 9px;
+  line-height: 0.625rem;
+}
+.shopee_ic .text-base\/4 {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.shopee_ic .text-base\/5 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.shopee_ic .text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.shopee_ic .text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.shopee_ic .text-sm\/4 {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+.shopee_ic .text-sm\/\[1\.875rem\] {
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+}
+.shopee_ic .text-sm\/sp14 {
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+}
+.shopee_ic .text-sp10 {
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+}
+.shopee_ic .text-sp10\/3 {
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+}
+.shopee_ic .text-sp12\/\[40px\] {
+  font-size: 0.75rem;
+  line-height: 40px;
+}
+.shopee_ic .text-sp14 {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+.shopee_ic .text-xl\/5 {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+.shopee_ic .text-xl\/6 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+.shopee_ic .text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.shopee_ic .text-xs\/3 {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+}
+.shopee_ic .text-xs\/4 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.shopee_ic .text-xs\/5 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+.shopee_ic .text-xs\/sp14 {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+}
+.shopee_ic .text-xs\/sp18 {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+.shopee_ic .font-bold {
+  font-weight: 700;
+}
+.shopee_ic .font-extralight {
+  font-weight: 200;
+}
+.shopee_ic .font-light {
+  font-weight: 300;
+}
+.shopee_ic .font-medium {
+  font-weight: 500;
+}
+.shopee_ic .font-normal {
+  font-weight: 400;
+}
+.shopee_ic .font-thin {
+  font-weight: 100;
+}
+.shopee_ic .uppercase {
+  text-transform: uppercase;
+}
+.shopee_ic .capitalize {
+  text-transform: capitalize;
+}
+.shopee_ic .leading-3 {
+  line-height: 0.75rem;
+}
+.shopee_ic .leading-4 {
+  line-height: 1rem;
+}
+.shopee_ic .leading-7 {
+  line-height: 1.75rem;
+}
+.shopee_ic .leading-\[14px\] {
+  line-height: 14px;
+}
+.shopee_ic .leading-\[16px\] {
+  line-height: 16px;
+}
+.shopee_ic .text-\[\#30B566\] {
+  --tw-text-opacity: 1;
+  color: rgba(48, 181, 102, var(--tw-text-opacity));
+}
+.shopee_ic .text-\[\#656565\] {
+  --tw-text-opacity: 1;
+  color: rgba(101, 101, 101, var(--tw-text-opacity));
+}
+.shopee_ic .text-shopee-black26 {
+  color: rgba(0, 0, 0, 0.26);
+}
+.shopee_ic .text-shopee-black54 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.shopee_ic .text-shopee-black65 {
+  color: rgba(0, 0, 0, 0.65);
+}
+.shopee_ic .text-shopee-black87 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.shopee_ic .text-shopee-deep-grey {
+  --tw-text-opacity: 1;
+  color: rgba(93, 93, 93, var(--tw-text-opacity));
+}
+.shopee_ic .text-shopee-green {
+  --tw-text-opacity: 1;
+  color: rgba(38, 170, 153, var(--tw-text-opacity));
+}
+.shopee_ic .text-shopee-grey {
+  --tw-text-opacity: 1;
+  color: rgba(250, 250, 250, var(--tw-text-opacity));
+}
+.shopee_ic .text-shopee-mask-grey {
+  --tw-text-opacity: 1;
+  color: rgba(189, 189, 189, var(--tw-text-opacity));
+}
+.shopee_ic .text-shopee-primary {
+  --tw-text-opacity: 1;
+  color: rgba(238, 77, 45, var(--tw-text-opacity));
+}
+.shopee_ic .text-white {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.shopee_ic .line-through {
+  text-decoration-line: line-through;
+}
+.shopee_ic .opacity-0 {
+  opacity: 0;
+}
+.shopee_ic .opacity-70 {
+  opacity: 0.7;
+}
+.shopee_ic .opacity-\[0\.82\] {
+  opacity: 0.82;
+}
+.shopee_ic .outline {
+  outline-style: solid;
+}
+.shopee_ic .drop-shadow-md {
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07))
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+}
+.shopee_ic .drop-shadow-sm {
+  --tw-drop-shadow: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+}
+.shopee_ic .filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+}
+.shopee_ic .transition {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.shopee_ic .duration-100 {
+  transition-duration: 100ms;
+}
+.shopee_ic .ease-sharp-motion-curve {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+}
+.shopee_ic .last\:mb-0:last-child {
+  margin-bottom: 0px;
+}
+.shopee_ic .hover\:z-\[1\]:hover {
+  z-index: 1;
+}
+.shopee_ic .hover\:-translate-y-\[1px\]:hover {
+  --tw-translate-y: -1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .hover\:cursor-not-allowed:hover {
+  cursor: not-allowed;
+}
+.shopee_ic .hover\:border-shopee-primary:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(238, 77, 45, var(--tw-border-opacity));
+}
+.shopee_ic .hover\:shadow-hover:hover {
+  --tw-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+  --tw-shadow-colored: 0 1px 20px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shopee_ic .active\:translate-y-0:active {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.shopee_ic .active\:shadow-active:active {
+  --tw-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+  --tw-shadow-colored: 0 1px 5px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shopee_ic .group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}

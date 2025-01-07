@@ -11,7 +11,15 @@ const app = express();
 const PORT = process.env.PORT || 9999;
 const SECRET = 'secret';
 
-app.use(cors());
+app.options('*', cors()); // Allow preflight requests
+app.use(
+  cors({
+    origin: '*', // Allow all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  }),
+);
+
 app.use(bodyParser.json());
 
 export const login: RequestHandler = async (req, res) => {
@@ -33,7 +41,9 @@ export const login: RequestHandler = async (req, res) => {
 
 export const authenticate: RequestHandler = async (req, res, next) => {
   const token = req.header('Authorization')?.replace('Bearer ', '');
-
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   if (!token) {
     res.status(401).json({ message: 'Access Denied' });
     return;
@@ -64,6 +74,8 @@ export const processRequest: RequestHandler = async (req, res, next) => {
     delete reqHeaders['connection'];
     delete reqHeaders['pragma'];
     delete reqHeaders['cache-control'];
+    delete reqHeaders['user-agent'];
+    delete reqHeaders['referer'];
 
     const response = await axios.request({
       method: req.method.toLowerCase(),

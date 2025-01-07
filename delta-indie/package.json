@@ -4,7 +4,7 @@
   "scripts": {
     "start": "serve",
     "dev:ts": "tsc -w",
-    "build:server": "tsc && node ./server/dist",
+    "build:server": "tsc",
     "dev:server": "nodemon ./server/dist"
   },
   "author": "",
