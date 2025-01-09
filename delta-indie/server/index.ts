@@ -58,7 +58,18 @@ export const authenticate: RequestHandler = async (req, res, next) => {
   }
 };
 
-export const processRequest: RequestHandler = async (req, res, next) => {
+export const randomWord: RequestHandler = async (req, res) => {
+  try {
+    const words = ['Table', 'Plant', 'Cried', 'Grasp', 'Horse'];
+    const randomIndex = Math.floor(Math.random() * words.length);
+
+    res.status(200).json({ word: words[randomIndex] });
+  } catch (err) {
+    res.status(500).json({ message: 'Error!', error: err });
+  }
+};
+
+export const processRequest: RequestHandler = async (req, res) => {
   const originalUrl = `https://${req.originalUrl.replace('/api/', '')}`;
 
   try {
@@ -91,6 +102,7 @@ export const processRequest: RequestHandler = async (req, res, next) => {
 };
 
 app.use('/api/login', login);
+app.use('/api/random-word', authenticate, randomWord);
 app.use('/api/*', authenticate, processRequest);
 
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
