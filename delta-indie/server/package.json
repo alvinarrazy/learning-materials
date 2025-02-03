@@ -1,11 +1,10 @@
 {
-  "name": "delta-indie-learning-materials",
+  "name": "server",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "start": "serve",
-    "dev:ts": "tsc -w",
-    "build:server": "tsc",
-    "dev:server": "nodemon ./server/dist"
+    "build": "tsc",
+    "dev": "nodemon ./dist"
   },
   "author": "",
   "license": "ISC",
