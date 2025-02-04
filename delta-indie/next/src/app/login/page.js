@@ -1,6 +1,15 @@
+'use client';
+
+import { useEffect } from 'react';
 import { Button, Container } from 'react-bootstrap';
 
 export default function Login() {
+  useEffect(() => {
+    fetch('/api/login', {
+      method: 'GET',
+    });
+  });
+
   return (
     <div>
       <main>
