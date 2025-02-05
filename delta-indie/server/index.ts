@@ -20,10 +20,10 @@ app.use(
 );
 
 app.use(bodyParser.json());
-// mongoose
-//   .connect(process.env.MONGO_URI as string)
-//   .then(() => console.log('MongoDB Connected'))
-//   .catch((err) => console.log(err));
+mongoose
+  .connect(process.env.MONGO_URI as string)
+  .then(() => console.log('MongoDB Connected'))
+  .catch((err) => console.log(err));
 
 // export const processRequest: RequestHandler = async (req, res) => {
 //   const originalUrl = `https://${req.originalUrl.replace('/api/', '')}`;
