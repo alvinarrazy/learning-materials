@@ -1,0 +1,8 @@
+import express from 'express';
+import { login } from '../handler/auth';
+
+const authRoutes = express.Router();
+
+authRoutes.post('/login', login);
+
+export default authRoutes;
