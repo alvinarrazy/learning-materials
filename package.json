@@ -1,0 +1,13 @@
+{
+  "name": "learning-materials",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deltaindie:server:deploy": "npm --prefix ./delta-indie/server run deploy:production",
+    "deltaindie:server:install": "npm --prefix ./delta-indie/server install"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

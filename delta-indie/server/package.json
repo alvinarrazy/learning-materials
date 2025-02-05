@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "nodemon ./dist"
+    "build": "tsc --watch",
+    "dev": "nodemon ./dist",
+    "deploy:production": "tsc && vercel --prod"
   },
   "author": "",
   "license": "ISC",
