@@ -60,8 +60,7 @@ export default function Navigation() {
                             key={child.path}>
                             <Link
                               className='nav-link'
-                              href={child.path}
-                              relative='route'>
+                              href={child.path}>
                               {child.name}
                             </Link>
                           </li>

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export async function GET(req) {
+export async function GET() {
   const response = NextResponse.json({ message: 'Login successful' });
 
   response.cookies.set({

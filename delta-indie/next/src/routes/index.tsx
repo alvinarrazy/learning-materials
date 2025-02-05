@@ -1,4 +1,6 @@
-export const protectedRoutes = [
+import { AppRoute } from './types';
+
+export const protectedRoutes: AppRoute[] = [
   {
     path: '/',
     name: 'Home',
