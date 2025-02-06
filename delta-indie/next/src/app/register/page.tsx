@@ -1,28 +1,43 @@
 // TODO: split the components
 'use client';
 
-import { login } from '@/services/auth';
+import useFormReducer from '@/hooks/useFormReducer';
+import { register } from '@/services/auth';
 import { timeout } from '@/utils/time';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
-export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
+interface State {
+  username: string;
+  password: string;
+  confirmPassword: string;
+  loading: boolean;
+}
 
-  async function handleLogin() {
-    setLoading(true);
+const InitState: State = {
+  username: '',
+  password: '',
+  confirmPassword: '',
+  loading: false,
+};
+
+export default function Register() {
+  const [{ username, password, loading, confirmPassword }, updateState] =
+    useFormReducer(InitState);
+  const router = useRouter();
+
+  async function handleRegister() {
+    if (password !== confirmPassword) {
+      return alert('Password harus sama!');
+    }
+    updateState({ loading: true });
     try {
-      await login({ username, password });
+      await register({ username, password });
       await timeout(3000);
-      router.push('/');
+      router.push('/login');
     } catch {
     } finally {
-      setLoading(false);
+      updateState({ loading: false });
     }
   }
 
@@ -49,13 +64,15 @@ export default function Login() {
                       Selamat Datang
                     </h1>
                     <p className='text-muted text-center mb-5'>
-                      Di Go Food ecek2
+                      Daftar untuk memulai
                     </p>
                     <Row className='mb-3'>
                       <Col>
                         <Form.Control
                           disabled={loading}
-                          onChange={(e) => setUsername(e.currentTarget.value)}
+                          onChange={(e) =>
+                            updateState({ username: e.currentTarget.value })
+                          }
                           placeholder='Username'
                         />
                       </Col>
@@ -65,8 +82,25 @@ export default function Login() {
                       <Col>
                         <Form.Control
                           disabled={loading}
-                          onChange={(e) => setPassword(e.currentTarget.value)}
+                          onChange={(e) =>
+                            updateState({ password: e.currentTarget.value })
+                          }
                           placeholder='Password'
+                          type='password'
+                        />
+                      </Col>
+                    </Row>
+
+                    <Row className='mb-3'>
+                      <Col>
+                        <Form.Control
+                          disabled={loading}
+                          onChange={(e) =>
+                            updateState({
+                              confirmPassword: e.currentTarget.value,
+                            })
+                          }
+                          placeholder='Confirm Password'
                           type='password'
                         />
                       </Col>
@@ -77,20 +111,10 @@ export default function Login() {
                         <Button
                           disabled={loading}
                           variant='primary'
-                          onClick={handleLogin}
+                          onClick={handleRegister}
                           className='w-100'>
-                          {loading ? 'Loading...' : 'Login'}
+                          {loading ? 'Loading...' : 'Register'}
                         </Button>
-                      </Col>
-                    </Row>
-
-                    <Row className='mb-3'>
-                      <Col className='d-flex justify-content-center'>
-                        <Link
-                          className='text-center'
-                          href='/register'>
-                          Daftar
-                        </Link>
                       </Col>
                     </Row>
                   </Card.Body>
