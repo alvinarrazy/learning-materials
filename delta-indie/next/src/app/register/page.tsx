@@ -3,7 +3,6 @@
 
 import useFormReducer from '@/hooks/useFormReducer';
 import { register } from '@/services/auth';
-import { timeout } from '@/utils/time';
 import { useRouter } from 'next/navigation';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
@@ -33,7 +32,6 @@ export default function Register() {
     updateState({ loading: true });
     try {
       await register({ username, password });
-      await timeout(3000);
       router.push('/login');
     } catch {
     } finally {

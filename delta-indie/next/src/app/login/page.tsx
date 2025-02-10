@@ -2,7 +2,6 @@
 'use client';
 
 import { login } from '@/services/auth';
-import { timeout } from '@/utils/time';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -18,7 +17,6 @@ export default function Login() {
     setLoading(true);
     try {
       await login({ username, password });
-      await timeout(3000);
       router.push('/');
     } catch {
     } finally {
