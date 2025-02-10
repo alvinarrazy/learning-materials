@@ -1,9 +1,11 @@
 import express from 'express';
-import { login, register } from '../handler/auth';
+import { checkSession, login, register } from '../handler/auth';
+import authenticate from '../middleware/authenticate';
 
 const authRoutes = express.Router();
 
 authRoutes.post('/login', login);
 authRoutes.post('/register', register);
+authRoutes.post('/checkSession', authenticate, checkSession);
 
 export default authRoutes;

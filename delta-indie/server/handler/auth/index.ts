@@ -28,6 +28,18 @@ export const login: RequestHandler = async (req, res) => {
   }
 };
 
+export const checkSession: RequestHandler = async (req, res) => {
+  try {
+    res.status(200).json({ message: 'success' });
+  } catch (err) {
+    if (err === 401 || err === 404) {
+      res.status(err).json({ message: AuthErrorMessage.InvalidCredential });
+      return;
+    }
+    res.status(500).json({ message: 'register failed', error: err });
+  }
+};
+
 export const register: RequestHandler = async (req, res) => {
   try {
     const { username, password } = req.body;
