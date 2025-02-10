@@ -1,6 +1,7 @@
 import express, { RequestHandler } from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './router';
@@ -10,15 +11,25 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 9999;
 
-app.options('*', cors());
-app.use(
-  cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  }),
-);
-
+const corsOptions = {
+  origin: /^http:\/\/localhost:\d+$/,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: [
+    'Content-Type',
+    'Content-Length',
+    'Accept-Encoding',
+    'X-CSRF-Token',
+    'Authorization',
+    'accept',
+    'origin',
+    'Cache-Control',
+    'X-Requested-With',
+  ],
+  credentials: true,
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+app.use(cookieParser());
 app.use(bodyParser.json());
 mongoose
   .connect(process.env.MONGO_URI as string)

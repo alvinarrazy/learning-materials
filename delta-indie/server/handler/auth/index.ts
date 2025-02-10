@@ -11,7 +11,14 @@ export const login: RequestHandler = async (req, res) => {
     }
 
     const token = await generateToken(username, password);
-    res.status(200).json({ token });
+    res.cookie('token', token, {
+      httpOnly: true,
+      path: '/',
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 24 * 60 * 60 * 1000,
+      sameSite: 'none',
+    });
+    res.status(200).json({ message: 'login Success', token });
   } catch (err) {
     if (err === 401 || err === 404) {
       res.status(err).json({ message: AuthErrorMessage.InvalidCredential });
