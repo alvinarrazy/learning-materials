@@ -10,13 +10,13 @@ export const login: RequestHandler = async (req, res) => {
     }
 
     const token = await generateToken(username, password);
-    // res.cookie('token', token, {
-    //   httpOnly: true,
-    //   path: '/',
-    //   secure: process.env.NODE_ENV === 'production',
-    //   maxAge: 24 * 60 * 60 * 1000,
-    //   sameSite: process.env.NODE_ENV === 'production' ? 'none' : undefined,
-    // });
+    res.cookie('token', token, {
+      httpOnly: true,
+      path: '/',
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 24 * 60 * 60 * 1000,
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : undefined,
+    });
     res.status(200).json({ message: 'login Success', token });
   } catch (err) {
     if (err === 401 || err === 404) {
