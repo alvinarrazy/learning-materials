@@ -4,10 +4,7 @@ import service from '@/app/api/service';
 export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  const { data } = await service.post(
-    'https://delta-indie.vercel.app/api/auth/login',
-    body,
-  );
+  const { data } = await service.post('auth/login', body);
 
   const response = NextResponse.json({ message: 'Login successful' });
 

@@ -1,7 +1,7 @@
 import { camelizeKeys, toSnakeKeys } from '@/utils/service';
 import axios from 'axios';
 
-const BE_URL = '/';
+const BE_URL = 'https://delta-indie.vercel.app/api';
 
 const service = (() => {
   const axiosApi = axios.create();
