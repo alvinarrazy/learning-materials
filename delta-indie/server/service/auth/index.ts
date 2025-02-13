@@ -12,7 +12,7 @@ export async function generateToken(username: string, password: string) {
     throw 401;
   }
 
-  return jwt.sign({ id: username }, SECRET, { expiresIn: '1h' });
+  return jwt.sign({ id: user._id }, SECRET, { expiresIn: '1h' });
 }
 
 export async function registerUser(username: string, password: string) {

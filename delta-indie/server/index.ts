@@ -6,6 +6,16 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './router';
 
+declare global {
+  namespace Express {
+    interface Request {
+      user: {
+        id: string;
+      };
+    }
+  }
+}
+
 dotenv.config();
 
 const app = express();

@@ -15,6 +15,7 @@ const authenticate: RequestHandler = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, SECRET);
+    console.log(decoded);
     (req as any).user = decoded;
     next();
   } catch (err) {
