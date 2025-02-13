@@ -19,6 +19,13 @@ export async function POST(req: NextRequest, { params }: RestContext) {
     return response;
   } catch (err) {
     const error = err as AxiosError;
+    if (error.status === 401) {
+      const res = NextResponse.redirect(new URL('/login', req.url));
+      res.cookies.delete('token');
+      return res;
+    }
+
+    console.log(error);
     const response = NextResponse.json(
       {
         message: 'Something went wrong',
@@ -34,8 +41,17 @@ export async function GET(req: NextRequest, { params }: RestContext) {
   try {
     const { routes } = await params;
     const token = req.cookies.get('token')?.value;
+    const searchParams = new URLSearchParams();
+    req.nextUrl.searchParams.forEach((value, key) => {
+      searchParams.append(key, value);
+    });
 
-    const { data } = await service(token).get(routes.join('/'));
+    let url = routes.join('/');
+    if (searchParams.size) {
+      url += '?' + searchParams.toString();
+    }
+
+    const { data } = await service(token).get(url);
 
     const response = NextResponse.json({
       message: 'success',
@@ -45,6 +61,13 @@ export async function GET(req: NextRequest, { params }: RestContext) {
     return response;
   } catch (err) {
     const error = err as AxiosError;
+    if (error.status === 401) {
+      const res = NextResponse.redirect(new URL('/login', req.url));
+      res.cookies.delete('token');
+      return res;
+    }
+
+    console.log(error);
     const response = NextResponse.json(
       {
         message: 'Something went wrong',

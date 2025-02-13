@@ -22,6 +22,9 @@ export default function Navigation() {
           className='navbar-collapse collapse'
           id='sidebarCollapse'>
           {protectedRoutes.map((route, index) => {
+            if (route.hidden) {
+              return <React.Fragment key={index}></React.Fragment>;
+            }
             return (
               <ul
                 className='navbar-nav'

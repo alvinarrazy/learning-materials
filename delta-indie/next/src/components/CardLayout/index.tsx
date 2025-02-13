@@ -3,10 +3,11 @@ import React, { ReactNode } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 
 interface Props {
-  redirect: string;
+  redirect?: string;
   title: string;
   description: string;
   children?: ReactNode;
+  image?: string;
 }
 
 export default function CardLayout({
@@ -14,19 +15,20 @@ export default function CardLayout({
   title,
   description,
   children,
+  image,
 }: Props) {
   return (
     <Card>
       <img
         className='card-img-top'
-        src='https://cdn.antaranews.com/cache/1200x800/2024/09/15/Photo-2-Seribu-Rasa.jpg'
+        src={image}
         loading='lazy'
       />
       <Card.Body>
         <Row className='align-items-center'>
           <Col>
             <h4 className='mb-2 name'>
-              <Link href={redirect}>{title}</Link>
+              {redirect ? <Link href={redirect}>{title}</Link> : title}
             </h4>
             <p className='small text-muted card-text'>{description}</p>
           </Col>

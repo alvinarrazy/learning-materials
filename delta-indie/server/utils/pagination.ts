@@ -14,8 +14,8 @@ export async function getPaginatedItems<T extends Model<any>>(
 
     // Fetch the paginated results
     const items = await Entity.find(filter)
-      .skip(skip)
-      .limit(limit)
+      // .skip(skip)
+      .limit(20)
       .sort({ createdAt: -1 }); // Sort by newest first
 
     const totalDocuments = await Entity.countDocuments();

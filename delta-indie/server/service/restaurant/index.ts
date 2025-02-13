@@ -38,25 +38,25 @@ export async function addItemToCart(
   restaurantId: string,
   itemId: string,
   quantity: number,
-  cartItemId?: string,
 ) {
   if (!userId || !restaurantId || !itemId) {
     throw { status: 400, msg: 'params not completed' };
   }
 
-  if (cartItemId) {
-    await setCart(cartItemId, quantity);
-    return cartItemId;
+  const oldCart = await getUserCart(userId, restaurantId, itemId, true);
+  if (oldCart.length) {
+    await setCart(oldCart[0].id, quantity);
+    return findCart(userId, restaurantId);
   }
 
   try {
-    const cart = await createNewCart({
+    await createNewCart({
       user: userId,
       restaurant: restaurantId,
       dish: itemId,
       quantity,
     });
-    return cart?._id;
+    return findCart(userId, restaurantId);
   } catch {
     throw { status: 400, msg: 'something is wrong' };
   }

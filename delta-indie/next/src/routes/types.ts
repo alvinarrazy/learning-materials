@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 export interface AppRoute {
   path: string;
   name: string;
-  icon: ReactNode;
+  icon?: ReactNode;
   children?: Omit<AppRoute, 'children'>[];
+  hidden?: boolean;
 }

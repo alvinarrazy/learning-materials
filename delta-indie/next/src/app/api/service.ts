@@ -1,7 +1,7 @@
-import { camelizeKeys, toSnakeKeys } from '@/utils/service';
 import axios, { AxiosError } from 'axios';
 
-const BE_URL = 'https://delta-indie.vercel.app/api';
+// const BE_URL = 'https://delta-indie.vercel.app/api';
+const BE_URL = 'http://localhost:9999/api';
 
 const service = (token?: string) => {
   const axiosApi = axios.create();
@@ -13,7 +13,7 @@ const service = (token?: string) => {
       };
 
       config.headers['Authorization'] = `Bearer ${token}`;
-      config.data = toSnakeKeys(config.data);
+      // config.data = toSnakeKeys(config.data);
 
       return config;
     },
@@ -24,7 +24,7 @@ const service = (token?: string) => {
 
   axiosApi.interceptors.response.use(
     (response) => {
-      response.data = camelizeKeys(response.data);
+      // response.data = camelizeKeys(response.data);
       return response;
     },
     async (error: AxiosError) => {

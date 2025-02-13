@@ -1,4 +1,3 @@
-import { camelizeKeys, toSnakeKeys } from '@/utils/service';
 import axios from 'axios';
 
 // const BE_URL = 'https://delta-indie.vercel.app';
@@ -15,7 +14,7 @@ const api = (() => {
         baseURL: BE_URL,
       };
 
-      config.data = toSnakeKeys(config.data);
+      // config.data = toSnakeKeys(config.data);
 
       return config;
     },
@@ -26,8 +25,8 @@ const api = (() => {
 
   axiosApi.interceptors.response.use(
     (response) => {
-      response.data = camelizeKeys(response.data.data);
-      return response;
+      // response.data = camelizeKeys(response.data.data);
+      return response.data;
     },
     // async (error: AxiosError) => {
     async () => {

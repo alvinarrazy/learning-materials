@@ -6,7 +6,12 @@ export function middleware(req: NextRequest) {
   const token = req.cookies.get('token')?.value;
 
   if (
-    protectedRoutes.map((route) => route.path).includes(req.nextUrl.pathname) &&
+    // TODO: make sure how to implement the protected routes with params
+    protectedRoutes.some((route) => {
+      if (route.path === '/') return req.nextUrl.pathname === '/';
+
+      return req.nextUrl.pathname.startsWith(route.path);
+    }) &&
     !token
   ) {
     return NextResponse.redirect(new URL('/login', req.url));

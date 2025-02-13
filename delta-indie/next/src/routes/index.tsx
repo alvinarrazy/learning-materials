@@ -11,4 +11,10 @@ export const protectedRoutes: AppRoute[] = [
     name: 'Profile',
     icon: <i className='fe fe-user' />,
   },
+  {
+    path: '/restaurant',
+    name: 'Restaurant',
+    icon: <i className='fe fe-user' />,
+    hidden: true,
+  },
 ];

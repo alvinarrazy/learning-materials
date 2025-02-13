@@ -30,11 +30,15 @@ export function getDishes(restaurant: string, page: number) {
 export async function getUserCart(
   user: string,
   restaurant: string,
+  dish?: string,
   idOnly = false,
 ) {
   let query = Cart.find({ user, restaurant });
 
+  if (dish) query = Cart.find({ user, restaurant, dish });
+
   if (idOnly) query = query.select('_id');
+  else query = query.populate('dish');
 
   const cart = await query;
   return cart;
