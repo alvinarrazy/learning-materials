@@ -1,0 +1,14 @@
+.float-container {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  z-index: 1000;
+}
+
+.cart-container {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  right: 0;
+  bottom: 3rem;
+}

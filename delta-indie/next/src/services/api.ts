@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // const BE_URL = 'https://delta-indie.vercel.app';
 // const BE_URL = 'http://localhost:9999';
-const BE_URL = '/';
+const BE_URL = '/api';
 
 const api = (() => {
   const axiosApi = axios.create();

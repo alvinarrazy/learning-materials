@@ -6,18 +6,9 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    const { data } = await service().post('auth/login', body);
+    await service().post('auth/register', body);
 
-    const response = NextResponse.json({ message: 'Login successful' });
-
-    response.cookies.set({
-      name: 'token',
-      value: data.token,
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      path: '/',
-      maxAge: 60 * 60 * 24 * 7,
-    });
+    const response = NextResponse.json({ message: 'Register successful' });
 
     return response;
   } catch (err) {

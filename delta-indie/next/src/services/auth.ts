@@ -3,9 +3,9 @@ import { ApiResponse } from '@/types/basic';
 import api from './api';
 
 export async function login(payload: LoginRequest) {
-  return api.post<LoginResponse>('api/auth/login', payload);
+  return api.post<LoginResponse>('auth/login', payload);
 }
 
 export async function register(payload: LoginRequest) {
-  return api.post<ApiResponse>('api/auth/register', payload);
+  return api.post<ApiResponse>('auth/register', payload);
 }

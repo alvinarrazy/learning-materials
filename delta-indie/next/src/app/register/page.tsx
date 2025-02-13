@@ -3,6 +3,7 @@
 
 import useFormReducer from '@/hooks/useFormReducer';
 import { register } from '@/services/auth';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
@@ -113,6 +114,16 @@ export default function Register() {
                           className='w-100'>
                           {loading ? 'Loading...' : 'Register'}
                         </Button>
+                      </Col>
+                    </Row>
+
+                    <Row className='mb-3'>
+                      <Col className='d-flex justify-content-center'>
+                        <Link
+                          className='text-center'
+                          href='/login'>
+                          Masuk
+                        </Link>
                       </Col>
                     </Row>
                   </Card.Body>
