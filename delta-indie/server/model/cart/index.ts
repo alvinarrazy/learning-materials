@@ -20,6 +20,10 @@ const cartSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  order: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Order',
+  },
 });
 
 const Cart = mongoose.model('Cart', cartSchema);

@@ -19,7 +19,7 @@ declare global {
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 9999;
+const PORT = process.env.PORT || 4000;
 
 const corsOptions = {
   origin: /^http:\/\/localhost:\d+$/,

@@ -6,10 +6,14 @@ import {
 } from '../../../repository/restaurant';
 import { MockRestaurants, MockDish } from './constants';
 
-export async function generateRestaurant() {
+export async function generateRestaurant(
+  start = 0,
+  end = MockRestaurants.length,
+) {
   const ids = [];
 
-  for (const mock of MockRestaurants) {
+  for (let i = start; i < end; i++) {
+    const mock = MockRestaurants[i];
     const data = await createNewRestaurant(mock);
     console.log('CREATED RESTAURANT', data.name, data.id);
     ids.push(data.id);
@@ -18,17 +22,29 @@ export async function generateRestaurant() {
   return ids;
 }
 
-export async function generateDish(restaurantIds: Types.ObjectId[]) {
-  let dishRange = 0;
+export async function generateDish(restaurantIds: Types.ObjectId[], start = 0) {
+  const magicNumber = 15;
+  let dishRange = start * magicNumber;
   const dishTotal = MockDish.length;
-  for (const restaurantId of restaurantIds) {
-    dishRange += 15;
+  for (const [index, restaurantId] of restaurantIds.entries()) {
+    let discountedMod = 0;
+    console.log('generating dish for', restaurantId, index);
+    dishRange += magicNumber;
     dishRange = dishRange % dishTotal;
-    for (let i = dishRange - 15; i < dishRange; i++) {
+    for (let i = dishRange - magicNumber; i < dishRange; i++) {
       const dish = MockDish[i] as IDish;
       dish.restaurant = restaurantId;
+
+      if (discountedMod % 3 === 0) {
+        const randomDivider = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+        dish.discountedPrice =
+          dish.price - Math.ceil(dish.price / randomDivider);
+      }
+
       const data = await createNewDish(dish);
       console.log('CREATED DISH', data.name, data.id);
+      discountedMod++;
     }
+    console.log('DONE DISH for', restaurantId, index);
   }
 }

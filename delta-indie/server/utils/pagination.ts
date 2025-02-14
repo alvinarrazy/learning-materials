@@ -4,21 +4,23 @@ export async function getPaginatedItems<T extends Model<any>>(
   Entity: T,
   options: {
     filter?: RootFilterQuery<any>;
-    page: number;
+    page?: number;
     limit?: number;
   },
 ) {
   try {
     const { filter = {}, page, limit = 10 } = options;
-    const skip = (page - 1) * limit;
+    const skip = page ? (page - 1) * limit : -1;
 
     // Fetch the paginated results
-    const items = await Entity.find(filter)
-      // .skip(skip)
-      .limit(20)
-      .sort({ createdAt: -1 }); // Sort by newest first
+    let query = Entity.find(filter).sort({ createdAt: -1 });
 
-    const totalDocuments = await Entity.countDocuments();
+    if (skip >= 0) {
+      query = query.skip(skip).limit(limit);
+    }
+
+    const items = await query;
+    const totalDocuments = await Entity.find(filter).countDocuments();
 
     return {
       items,

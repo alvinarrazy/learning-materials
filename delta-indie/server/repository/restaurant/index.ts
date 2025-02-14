@@ -3,6 +3,7 @@ import Dish, { IDish } from '../../model/dish';
 import { getPaginatedItems } from '../../utils/pagination';
 import Cart from '../../model/cart';
 import { Document } from 'mongoose';
+import Order from '../../model/order';
 
 export async function createNewRestaurant(params: IRestaurant) {
   const newData = new Restaurant(params);
@@ -16,32 +17,40 @@ export async function createNewDish(params: IDish) {
   return newData;
 }
 
-export function getRestaurants(page: number) {
+export function getRestaurants(page?: number) {
   return getPaginatedItems(Restaurant, { page });
 }
 
-export function getDishes(restaurant: string, page: number) {
+export function getDishes(restaurant: string, page?: number) {
   return getPaginatedItems(Dish, {
     page,
     filter: { restaurant },
   });
 }
 
-export async function getUserCart(
+export async function getUserDraftCart(
   user: string,
   restaurant: string,
   dish?: string,
   idOnly = false,
 ) {
-  let query = Cart.find({ user, restaurant });
+  let query = Cart.find({ user, restaurant, order: { $exists: false } });
 
-  if (dish) query = Cart.find({ user, restaurant, dish });
+  if (dish)
+    query = Cart.find({ user, restaurant, dish, order: { $exists: false } });
 
   if (idOnly) query = query.select('_id');
   else query = query.populate('dish');
 
-  const cart = await query;
-  return cart;
+  const carts = await query;
+  return carts;
+}
+
+export async function getUserOrderedCart(user: string, order: string) {
+  const query = Cart.find({ user, order }).populate('dish');
+
+  const carts = await query;
+  return carts;
 }
 
 export async function createNewCart(params: {
@@ -66,4 +75,27 @@ export async function setCart(cart: string, quantity: number) {
   const existingCart = await Cart.findByIdAndUpdate(cart, { quantity });
 
   return existingCart;
+}
+
+export async function createNewOrder(
+  user: string,
+  restaurant: string,
+  status = 'Waiting',
+) {
+  const carts = await getUserDraftCart(user, restaurant, undefined, true);
+
+  if (!carts?.length) {
+    throw { status: 404, msg: 'carts not found' };
+  }
+
+  const order = new Order({ restaurant, status, user });
+
+  for (const cart of carts) {
+    await Cart.findByIdAndUpdate(cart._id, { order: order._id });
+  }
+  await order.save();
+}
+
+export function getOrderByUserId(user: string) {
+  return Order.find({ user }).sort({ createdAt: -1 });
 }

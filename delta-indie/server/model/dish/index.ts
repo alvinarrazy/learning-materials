@@ -9,6 +9,7 @@ const dishSchema = new mongoose.Schema({
   },
   description: { type: String, required: true },
   price: { type: Number, required: true },
+  discountedPrice: { type: Number },
   image: { type: String },
 });
 
@@ -21,5 +22,6 @@ export interface IDish {
   name: string;
   description: string;
   price: number;
+  discountedPrice?: number;
   image?: string;
 }

@@ -1,9 +1,11 @@
 import { RequestHandler } from 'express';
 import {
   addItemToCart,
+  createOrder,
   findCart,
   getDishesPaged,
   getRestaurantsPaged,
+  getUserOrders,
 } from '../../service/restaurant';
 
 export const getRestaurants: RequestHandler = async (req, res) => {
@@ -37,17 +39,11 @@ export const getDishes: RequestHandler = async (req, res) => {
 
 export const addToCart: RequestHandler = async (req, res) => {
   try {
-    const { dishId, quantity, cartId } = req.body;
+    const { dishId, quantity } = req.body;
     const { user } = req;
     const { restaurantId } = req.params;
 
-    const data = await addItemToCart(
-      user.id,
-      restaurantId,
-      dishId,
-      quantity,
-      cartId,
-    );
+    const data = await addItemToCart(user.id, restaurantId, dishId, quantity);
     res.status(200).json({
       message: 'success',
       data,
@@ -57,7 +53,7 @@ export const addToCart: RequestHandler = async (req, res) => {
   }
 };
 
-export const getCart: RequestHandler = async (req, res) => {
+export const getCheckoutDetails: RequestHandler = async (req, res) => {
   try {
     const { user } = req;
     const { restaurantId } = req.params;
@@ -69,5 +65,36 @@ export const getCart: RequestHandler = async (req, res) => {
     });
   } catch (err) {
     res.status((err as any)?.status || 500).json({ message: (err as any).msg });
+  }
+};
+
+export const fetchUserOrders: RequestHandler = async (req, res) => {
+  try {
+    const { user } = req;
+
+    const data = await getUserOrders(user.id);
+    res.status(200).json({
+      message: 'success',
+      data,
+    });
+  } catch (err) {
+    res.status((err as any)?.status || 500).json({ message: (err as any).msg });
+  }
+};
+
+export const checkout: RequestHandler = async (req, res) => {
+  try {
+    const { user } = req;
+    const { restaurantId } = req.params;
+
+    const data = await createOrder(user.id, restaurantId);
+    res.status(200).json({
+      message: 'success',
+      data,
+    });
+  } catch (err) {
+    res
+      .status((err as any)?.status || 500)
+      .json({ message: (err as any).msg || err });
   }
 };
