@@ -37,7 +37,7 @@ export default function RestaurantDetail({ params }: Props) {
     { dishes, loading, cartItems, page, loadingCartChanging },
     updateState,
   ] = useFormReducer(InitState);
-  const { id } = use<{ id: string }>(params);
+  const { id: restaurantId } = use<{ id: string }>(params);
 
   const cartHashMap = useMemo(() => {
     const hash: Record<string, number> = {};
@@ -51,7 +51,7 @@ export default function RestaurantDetail({ params }: Props) {
   async function loadMenu() {
     updateState({ loading: true });
     try {
-      const { data } = await getDishes(id, page);
+      const { data } = await getDishes(restaurantId, page);
       updateState({ dishes: data.items });
 
       await loadCart();
@@ -63,8 +63,8 @@ export default function RestaurantDetail({ params }: Props) {
   async function loadCart() {
     updateState({ loading: true });
     try {
-      const { data } = await getCartItems(id);
-      updateState({ cartItems: data });
+      const { data } = await getCartItems(restaurantId);
+      updateState({ cartItems: data.carts });
     } finally {
       updateState({ loading: false });
     }
@@ -73,8 +73,8 @@ export default function RestaurantDetail({ params }: Props) {
   async function handleChangeCart(dishId: string, quantity: number) {
     try {
       updateState({ loadingCartChanging: true });
-      const { data } = await setCartItem(id, dishId, quantity);
-      updateState({ cartItems: data });
+      const { data } = await setCartItem(restaurantId, dishId, quantity);
+      updateState({ cartItems: data.carts });
     } finally {
       updateState({ loadingCartChanging: false });
     }
@@ -157,7 +157,10 @@ export default function RestaurantDetail({ params }: Props) {
           </Container>
         </div>
       </WithLoading>
-      <CartFloating cartItems={cartItems} />
+      <CartFloating
+        cartItems={cartItems}
+        restaurantId={restaurantId}
+      />
     </main>
   );
 }

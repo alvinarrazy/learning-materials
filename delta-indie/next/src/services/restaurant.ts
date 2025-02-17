@@ -1,7 +1,8 @@
 import {
-  CartItem,
   Dish,
+  GetCheckoutDetailsResponse,
   GetPaginationResponse,
+  Order,
   Restaurant,
 } from '@/types/restaurant';
 import api from './api';
@@ -19,7 +20,9 @@ export function getDishes(restaurantId: string, page = 1) {
 }
 
 export function getCartItems(restaurantId: string) {
-  return api.get<CartItem[]>(`rest/restaurants/${restaurantId}/getCartItems`);
+  return api.get<GetCheckoutDetailsResponse>(
+    `rest/restaurants/${restaurantId}/getCheckoutDetails`,
+  );
 }
 
 export function setCartItem(
@@ -27,8 +30,19 @@ export function setCartItem(
   dishId: string,
   quantity: number,
 ) {
-  return api.post<CartItem[]>(`rest/restaurants/${restaurantId}/addItem`, {
-    dishId,
-    quantity,
-  });
+  return api.post<GetCheckoutDetailsResponse>(
+    `rest/restaurants/${restaurantId}/addItem`,
+    {
+      dishId,
+      quantity,
+    },
+  );
+}
+
+export function checkout(restaurantId: string) {
+  return api.post(`rest/restaurants/${restaurantId}/checkout`, {});
+}
+
+export function getUserOrders() {
+  return api.get<Order[]>('rest/orders/getAll');
 }

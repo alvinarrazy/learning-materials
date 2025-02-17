@@ -7,9 +7,9 @@ export const protectedRoutes: AppRoute[] = [
     icon: <i className='fe fe-home' />,
   },
   {
-    path: '/profile',
-    name: 'Profile',
-    icon: <i className='fe fe-user' />,
+    path: '/orders',
+    name: 'Order List',
+    icon: <i className='fe fe-list' />,
   },
   {
     path: '/restaurant',

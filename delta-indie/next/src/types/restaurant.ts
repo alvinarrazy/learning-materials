@@ -13,6 +13,7 @@ export interface Dish {
   name: string;
   description: string;
   price: number;
+  discountedPrice?: number;
   image?: string;
 }
 
@@ -28,4 +29,17 @@ export interface GetPaginationResponse<T> {
   items: T[];
   totalDocuments: number;
   totalPages: number;
+}
+
+export interface GetCheckoutDetailsResponse {
+  carts: CartItem[];
+  totalPrice: number;
+  totalDiscounterPrice: number;
+}
+
+export interface Order {
+  _id: string;
+  status: string;
+  restaurant: Restaurant;
+  carts: CartItem[];
 }

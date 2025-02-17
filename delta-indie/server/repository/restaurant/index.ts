@@ -97,5 +97,5 @@ export async function createNewOrder(
 }
 
 export function getOrderByUserId(user: string) {
-  return Order.find({ user }).sort({ createdAt: -1 });
+  return Order.find({ user }).populate('restaurant').sort({ createdAt: -1 });
 }

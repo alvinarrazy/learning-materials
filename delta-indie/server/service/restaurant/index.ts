@@ -19,18 +19,11 @@ export function getDishesPaged(restaurantId: string, page?: number) {
   return getDishes(restaurantId, page);
 }
 
-export async function findCart(userId: string, restaurantId: string) {
-  if (!userId || !restaurantId) {
-    throw { status: 400, msg: 'params not completed' };
-  }
-
-  const carts = await getUserDraftCart(userId, restaurantId);
-  if (!carts?.length) throw { status: 404, msg: 'carts not found' };
-
+function calculatePrice(carts: any) {
   let totalPrice = 0;
   let totalDiscountedPrice = 0;
 
-  carts.forEach((c) => {
+  carts.forEach((c: any) => {
     const dish = c.dish as unknown as IDish;
     totalPrice += dish.price * c.quantity;
     if (dish.discountedPrice)
@@ -39,6 +32,17 @@ export async function findCart(userId: string, restaurantId: string) {
   });
 
   return { carts, totalPrice, totalDiscountedPrice };
+}
+
+export async function findCart(userId: string, restaurantId: string) {
+  if (!userId || !restaurantId) {
+    throw { status: 400, msg: 'params not completed' };
+  }
+
+  const carts = await getUserDraftCart(userId, restaurantId);
+  if (!carts?.length) throw { status: 404, msg: 'carts not found' };
+
+  return calculatePrice(carts);
 }
 
 export async function addItemToCart(
@@ -54,7 +58,8 @@ export async function addItemToCart(
   const oldCart = await getUserDraftCart(userId, restaurantId, itemId, true);
   if (oldCart.length) {
     await setCart(oldCart[0].id, quantity);
-    return getUserDraftCart(userId, restaurantId);
+    const updatedCart = await getUserDraftCart(userId, restaurantId);
+    return calculatePrice(updatedCart);
   }
 
   try {
@@ -64,7 +69,8 @@ export async function addItemToCart(
       dish: itemId,
       quantity,
     });
-    return getUserDraftCart(userId, restaurantId);
+    const updatedCart = await getUserDraftCart(userId, restaurantId);
+    return calculatePrice(updatedCart);
   } catch {
     throw { status: 400, msg: 'something is wrong' };
   }

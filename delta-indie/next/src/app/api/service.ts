@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios';
 
 // const BE_URL = 'https://delta-indie.vercel.app/api';
-const BE_URL = 'http://localhost:9999/api';
+const BE_URL = 'http://localhost:4000/api';
 
 const service = (token?: string) => {
   const axiosApi = axios.create();
