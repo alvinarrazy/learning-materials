@@ -5,7 +5,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 interface Props {
   redirect?: string;
   title: string;
-  description: string;
+  description: ReactNode;
   children?: ReactNode;
   image?: string;
 }

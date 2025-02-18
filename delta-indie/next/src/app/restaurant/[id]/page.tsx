@@ -1,5 +1,4 @@
 'use client';
-import CardLayout from '@/components/CardLayout';
 import CartFloating from '@/components/CartFloating';
 import WithLoading from '@/components/WithLoading';
 import useFormReducer from '@/hooks/useFormReducer';
@@ -7,7 +6,9 @@ import useScrollToBottom from '@/hooks/useScrollToBottom';
 import { getCartItems, getDishes, setCartItem } from '@/services/restaurant';
 import { CartItem, Dish } from '@/types/restaurant';
 import React, { use, useEffect, useMemo, useRef } from 'react';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import ChangeQuantity from '../containers/ChangeQuantity';
+import FoodCard from '../containers/FoodCard';
 
 interface Props {
   params: Promise<{
@@ -47,6 +48,23 @@ export default function RestaurantDetail({ params }: Props) {
 
     return hash;
   }, [cartItems]);
+
+  function getPrice(dish: Dish) {
+    if (dish.discountedPrice) {
+      return (
+        <h2 className='text-primary d-flex justify-content-end'>
+          ${dish.discountedPrice}
+          <small className='text-decoration-line-through text-danger'>
+            ${dish.price}
+          </small>
+        </h2>
+      );
+    }
+
+    return (
+      <h2 className='text-primary d-flex justify-content-end'>${dish.price}</h2>
+    );
+  }
 
   async function loadMenu() {
     updateState({ loading: true });
@@ -102,56 +120,20 @@ export default function RestaurantDetail({ params }: Props) {
         <div>
           <Container>
             <Row>
-              {dishes.map((dish, index) => (
-                <Col
-                  xs={12}
-                  md={6}
-                  xl={4}
-                  key={index}>
-                  <CardLayout
-                    title={dish.name}
-                    description={dish.description}
-                    redirect=''
-                    image={dish.image}>
-                    <Row className='justify-content-center'>
-                      <Col xs='auto'>
-                        <Button
-                          disabled={
-                            loadingCartChanging || !cartHashMap[dish._id]
-                          }
-                          onClick={() =>
-                            handleChangeCart(
-                              dish._id,
-                              cartHashMap[dish._id] - 1,
-                            )
-                          }
-                          variant='outline-primary'>
-                          -
-                        </Button>
-                      </Col>
-                      <Col xs='auto'>
-                        <Form.Control
-                          disabled
-                          value={cartHashMap[dish._id] || 0}
-                          className='text-center px-0'
-                        />
-                      </Col>
-                      <Col xs='auto'>
-                        <Button
-                          disabled={loadingCartChanging}
-                          onClick={() =>
-                            handleChangeCart(
-                              dish._id,
-                              (cartHashMap[dish._id] || 0) + 1,
-                            )
-                          }
-                          variant='outline-primary'>
-                          +
-                        </Button>
-                      </Col>
-                    </Row>
-                  </CardLayout>
-                </Col>
+              {dishes.map((dish) => (
+                <FoodCard
+                  name={dish.name}
+                  description={dish.description}
+                  price={getPrice(dish)}
+                  image={dish.image}
+                  key={dish._id}>
+                  <ChangeQuantity
+                    handleChangeCart={handleChangeCart}
+                    quantity={cartHashMap[dish._id]}
+                    disabled={loadingCartChanging}
+                    dish={dish}
+                  />
+                </FoodCard>
               ))}
             </Row>
           </Container>
